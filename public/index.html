@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Covid-19</title>
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <meta name="description" content="Tracking Covid-19 in the world, by jcsoftia">
+    <script src='https://api.mapbox.com/mapbox.js/v3.2.1/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v3.2.1/mapbox.css' rel='stylesheet' />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/e301c91d71.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .mapa{
+        position: relative;
+      }
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="wrapper">
+        <div class="header-grid">
+          <div>
+            <h1>CASOS DE CORONA VIRUS EN EL PERÚ</h1>
+            <p class="header-total">Casos Actuales: 154 K</p>
+          </div>
+          <div class="dark-mode">
+            <p class="dark-mode-title">Dark Mode</p>
+            <input type="checkbox" class="checkbox" id="checkbox">
+            <label class="switch" for="checkbox">
+  
+            </label>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="top-cards">
+      <div class="wrapper">
+        <div class="grid">
+          <article class="card facebook">
+            <p class="card-title">
+              <i class="fas fa-procedures icono"></i>
+               Casos confirmados
+            </p>
+            <p class="card-followers">
+              <span class="card-followers-number">478 K</span>
+              <span class="card-followers-title">Contagiados</span>
+            </p>
+            <p class="card-today">
+              <img src="images/icon-up.svg" alt="">
+              122 Hoy
+            </p>
+          </article>
+          <article class="card twitter">
+            <p class="card-title">
+              <i class="fas fa-heartbeat"></i>
+              Pacientes recuperados
+            </p>
+            <p class="card-followers">
+              <span class="card-followers-number">324 K</span>
+              <span class="card-followers-title">Recuperados</span>
+            </p>
+            <p class="card-today">
+              <img src="images/icon-up.svg" alt="">
+              12 Hoy
+            </p>
+          </article>
+          <article class="card instagram">
+            <p class="card-title">
+              <i class="fas fa-skull-crossbones"></i>
+              Muertes
+            </p>
+            <p class="card-followers">
+              <span class="card-followers-number">21,072</span>
+              <span class="card-followers-title">muertes</span>
+            </p>
+            <p class="card-today">
+              <img src="images/icon-up.svg" alt="">
+              12 Hoy
+            </p>
+          </article>
+          <article class="card youtube">
+            <p class="card-title">
+              <i class="fas fa-house-user"></i>
+              Casos en J U N I N 
+            </p>
+            <p class="card-followers">
+              <span class="card-followers-number">9563</span>
+              <span class="card-followers-title">infectados</span>
+            </p>
+            <p class="card-today">
+              <img src="images/icon-up.svg" alt="">
+              12 Hoy
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="mapa">
+      <div class="total-cases">
+        <p>
+          <button id="btn" color='red'>❌</button>
+        </p>
+        
+        <div id="total">
+  
+        </div>
+        
+      </div>
+      <div id='map' class='map'> </div>
+    </section>
+    <section class="overview">
+      <div class="wrapper">
+        <h2>DEPARTAMENTOS MÁS AFECTADOS </h2>
+        <div class="grid">
+          <div class="card-small">
+            <p class="card-small-views">Lima Metropolitana</p>
+            <p class="card-small-icon">
+              <img src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Flag_of_Lima.svg/20px-Flag_of_Lima.svg.png" alt="">
+            </p>
+            <p class="card-small-number">222 840</p>
+            <p class="card-small-percentage">
+              <span>
+                <img src="images/icon-up.svg" alt="">
+                1%
+              </span>
+            </p>
+          </div>
+          <div class="card-small">
+            <p class="card-small-views">Callo</p>
+            <p class="card-small-icon">
+              <img src="//upload.wikimedia.org/wikipedia/commons/thumb/9/92/Bandera_del_Callao.png/20px-Bandera_del_Callao.png" alt="">
+            </p>
+            <p class="card-small-number">23 005</p>
+            <p class="card-small-percentage is-danger">
+              <span>
+                <img src="images/icon-down.svg" alt="">
+                2%
+              </span>
+            </p>
+          </div>
+          <div class="card-small">
+            <p class="card-small-views">Piura</p>
+            <p class="card-small-icon">
+              <img src="//upload.wikimedia.org/wikipedia/commons/thumb/5/53/Bandera_Region_Piura.png/20px-Bandera_Region_Piura.png" alt="">
+            </p>
+            <p class="card-small-number">22 641</p>
+            <p class="card-small-percentage">
+              <span>
+                <img src="images/icon-up.svg" alt="">
+                2%
+              </span>
+            </p>
+          </div>
+          <div class="card-small">
+            <p class="card-small-views">Arequipa</p>
+            <p class="card-small-icon">
+              <img src="//upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Bandera_de_Arequipa.svg/20px-Bandera_de_Arequipa.svg.png" alt="">
+            </p>
+            <p class="card-small-number">19 579</p>
+            <p class="card-small-percentage">
+              <span>
+                <img src="images/icon-up.svg" alt="">
+                1%
+              </span>
+            </p>
+          </div>
+          <div class="card-small">
+            <p class="card-small-views">Lima</p>
+            <p class="card-small-icon">
+              <img src="//upload.wikimedia.org/wikipedia/commons/thumb/4/49/Bandera_Regi%C3%B3n_Lima.png/20px-Bandera_Regi%C3%B3n_Lima.png" alt="">
+            </p>
+            <p class="card-small-number">19 469</p>
+            <p class="card-small-percentage">
+              <span>
+                <img src="images/icon-up.svg" alt="">
+                2%
+              </span>
+            </p>
+          </div>
+          <div class="card-small">
+            <p class="card-small-views">Lambayeque</p>
+            <p class="card-small-icon">
+              <img src="//upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Flag_of_Lambayeque_Department.svg/20px-Flag_of_Lambayeque_Department.svg.png" alt="">
+            </p>
+            <p class="card-small-number">18 775</p>
+            <p class="card-small-percentage">
+              <span>
+                <img src="images/icon-up.svg" alt="">
+                1%
+              </span>
+            </p>
+          </div>
+          <div class="card-small">
+            <p class="card-small-views">La Libertad</p>
+            <p class="card-small-icon">
+              <img src="//upload.wikimedia.org/wikipedia/commons/thumb/f/f1/La_Libertad_Flag%28PER%29.png/20px-La_Libertad_Flag%28PER%29.png" alt="">
+            </p>
+            <p class="card-small-number">17 441</p>
+            <p class="card-small-percentage is-danger">
+              <span>
+                <img src="images/icon-down.svg" alt="">
+                1%
+              </span>
+            </p>
+          </div>
+          <div class="card-small">
+            <p class="card-small-views">Ica</p>
+            <p class="card-small-icon">
+              <img src="//upload.wikimedia.org/wikipedia/commons/thumb/2/28/Bandera_Regi%C3%B3n_Ica.png/20px-Bandera_Regi%C3%B3n_Ica.png" alt="">
+            </p>
+            <p class="card-small-number">14 797</p>
+            <p class="card-small-percentage is-danger">
+              <span>
+                <img src="images/icon-down.svg" alt="">
+                2%
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v1.0.0/leaflet.markercluster.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v1.0.0/MarkerCluster.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v1.0.0/MarkerCluster.Default.css' rel='stylesheet'/>
+    <script src="./js/index.js" type="module"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/buildApi.js"></script>
+  </body>
+</html>
