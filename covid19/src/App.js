@@ -25,24 +25,39 @@ function App() {
       </div>
     </div>
   </header>
-  <div className="container-top">
-    <TopCard className="top"/>  
-    <TopCard className="top"/>  
-    <TopCard className="top"/>  
-    <TopCard className="top"/>  
-    
-  </div>  
-  <div className="container-mapa">
-    <Mapa className="mapa-child"/>
+
+ <section className="top-cards">
+  <div className="wrapper">
+    <div className="grid">
+      <TopCard/>
+      <TopCard/>
+      <TopCard/>
+      <TopCard/>
+    </div>
   </div>
-  <div className="overview-container">
-  <Overview/>
-  <Overview/>
-  <Overview/>
-  <Overview/>
-  <Overview/>
-  <Overview/>
+</section>
+
+<div className="mapa">
+<Mapa/>
+</div>
+
+<div className="overview">
+  <div className="wrapper">
+    <h2>DEPARTAMENTOS MÁS AFECTADOS </h2>
+    <div className="grid">
+      <Overview/>
+      <Overview/>
+      <Overview/>
+      <Overview/>
+      <Overview/>
+      <Overview/>
+      <Overview/>
+      <Overview/>
+    </div>
   </div>
+</div>
+
+ 
 </div>
 
     </div>
