@@ -1,24 +1,50 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import TopCard from './TopCard';
+import Mapa from './Mapa';
+import Overview from './Overview'
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+  <header className="header">
+    <div className="wrapper">
+      <div className="header-grid">
+        <div>
+          <h1>CASOS DE CORONA VIRUS EN EL PERÚ</h1>
+          <p className="header-total">Casos Actuales: 154 K</p>
+        </div>
+        <div className="dark-mode">
+          <p className="dark-mode-title">Dark Mode</p>
+          <input type="checkbox" className="checkbox" id="checkbox" />
+          <label className="switch" htmlFor="checkbox">
+          </label>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div className="container-top">
+    <TopCard className="top"/>  
+    <TopCard className="top"/>  
+    <TopCard className="top"/>  
+    <TopCard className="top"/>  
+    
+  </div>  
+  <div className="container-mapa">
+    <Mapa className="mapa-child"/>
+  </div>
+  <div className="overview-container">
+  <Overview/>
+  <Overview/>
+  <Overview/>
+  <Overview/>
+  <Overview/>
+  <Overview/>
+  </div>
+</div>
+
     </div>
   );
 }
