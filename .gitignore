@@ -1,5 +1,5 @@
 coronavirus
 node_modules
-/venv
-/python/data/
+venv
+data
 
