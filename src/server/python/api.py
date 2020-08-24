@@ -105,18 +105,27 @@ def get_department_province(df):
     data = {
         
     }
-    # print(newDF.head(60))
-    # df_to_dict(df, newDF)
-    # print(type(newDF))
-    # data["data"] = newDF
-    # r = json.dumps(data,  indent=4)
-    # loaded_r = json.loads(r)
     return dep_prov_to_dict(df, newDF)
+
+def get_provinces(df):
+    new_df = df[['PROVINCIA','CANTIDAD']].groupby(["PROVINCIA"])[
+        ['CANTIDAD']].sum().sort_values(by=['CANTIDAD'],ascending=False)
+
+    for item in new_df.index.get_level_values(0):
+        print(item)
+    return new_df
+
+def get_provinces_lat_lng(df):
+    
 
 if __name__ == "__main__":
     df = get_dataframe()
     # api = Api()
     # get_department_province(df)
-    print(get_department_province(df))
+    # print(get_department_province(df))
+
+
+    # print(get_provinces(df))
+    get_provinces(df)
 
     # print(get_positives(df, sys.argv[1]))
