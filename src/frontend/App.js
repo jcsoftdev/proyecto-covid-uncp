@@ -1,11 +1,33 @@
-import React from 'react';
-import './App.css';
+import React, {useEffect, useState} from 'react';
+import './assets/styles/App.css';
 import TopCard from './TopCard';
 import Mapa from './Mapa';
 import Overview from './Overview'
+import Graphic from './Components/Graphic';
 
 
 function App() {
+  const [department, setDepartment] = useState([])
+
+  useEffect(() => {
+    const getData = async () => {
+      const res = await fetch('./department',{
+        headers : { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+         }
+  
+      })
+      console.log(res)
+      const data = await res.json()
+      console.log(data)
+      setDepartment(data)
+    }
+    getData()
+    return () => {
+      // cleanup
+    }
+  }, [])
   return (
     <div className="App">
       <div>
@@ -29,7 +51,7 @@ function App() {
  <section className="top-cards">
   <div className="wrapper">
     <div className="grid">
-      <TopCard/>
+      
       <TopCard/>
       <TopCard/>
       <TopCard/>
@@ -38,21 +60,20 @@ function App() {
 </section>
 
 <div className="mapa">
-<Mapa/>
+  <Mapa/>
+  <Graphic/>
 </div>
 
 <div className="overview">
   <div className="wrapper">
-    <h2>DEPARTAMENTOS MÁS AFECTADOS </h2>
+    <h2>DEPARTAMENTOS AFECTADOS </h2>
     <div className="grid">
-      <Overview/>
-      <Overview/>
-      <Overview/>
-      <Overview/>
-      <Overview/>
-      <Overview/>
-      <Overview/>
-      <Overview/>
+    {
+        department.map((item)=>{
+          console.log(item)
+          return <Overview key={item.DEPARTAMENTO} DEPARTAMENTO={item.DEPARTAMENTO} CANTIDAD={item.CANTIDAD}/>
+        })
+      }
     </div>
   </div>
 </div>
