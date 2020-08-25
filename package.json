@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@babel/register": "^7.10.5",
+    "@mapbox/mapbox-gl-geocoder": "^4.7.0",
     "chart.js": "^2.9.3",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
@@ -14,7 +15,7 @@
     "webpack": "^4.44.1"
   },
   "scripts": {
-    "clean":"kill -9 $(lsof -t -i:3000)",
+    "clean": "kill -9 $(lsof -t -i:3000)",
     "server": "node ./src/server/index.js",
     "dev": "nodemon ./src/server/index.js",
     "build": "webpack --mode production",
@@ -42,6 +43,7 @@
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
     "css-loader": "^4.2.1",
+    "file-loader": "^6.0.0",
     "html-loader": "^1.2.1",
     "html-webpack-plugin": "^4.3.0",
     "kill-port": "^1.6.1",
@@ -50,6 +52,7 @@
     "nodemon": "1.19",
     "react-hot-loader": "^4.12.21",
     "sass-loader": "^9.0.3",
+    "svg-url-loader": "^6.0.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-middleware": "^3.7.2",
     "webpack-dev-server": "^3.11.0",

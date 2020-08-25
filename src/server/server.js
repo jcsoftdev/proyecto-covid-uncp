@@ -31,8 +31,21 @@ app.get('/department/',(req, res)=>{
 
   const getData = async () => {
     try {
-      const data  = await api()
-      console.log(data)
+      const data  = await api("get_positives","DEPARTAMENTO")
+      // console.log(data)
+      res.send(data)
+    } catch (error) {
+      console.log('error', error)
+    }
+  }
+  getData()
+})
+app.get('/pronvince_ubication/',(req, res)=>{
+
+  const getData = async () => {
+    try {
+      const data  = await api("get_provinces")
+      // console.log(data)
       res.send(data)
     } catch (error) {
       console.log('error', error)
@@ -45,7 +58,7 @@ app.get('/All/',(req, res)=>{
 
   const getData = async () => {
     try {
-      const data  = await api()
+      const data  = await api("get_provinces")
       console.log(data)
       res.send(data.data)
     } catch (error) {

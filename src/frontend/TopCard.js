@@ -14,7 +14,7 @@ function TopCard() {
           <span className="card-followers-title">Contagiados</span>
         </p>
         <p className="card-today">
-          <img src="img/icon-up.svg" alt="today" />
+          {/* <img src="img/icon-up.svg" alt="today" /> */}
           122 Hoy
         </p>
       </article>
