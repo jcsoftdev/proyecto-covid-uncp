@@ -1,0 +1,519 @@
+
+.ld-container {
+  animation: rotatem 1s infinite 1s;
+  transform: translate(-50%, -50%) rotate(0deg);
+  position: absolute;
+  animation-direction: normal;
+  top: 50%;
+  left: 50%;
+}
+
+.loader {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background-color: #333;
+}
+
+@keyframes rotatem {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 1;
+  }
+  100% {
+  }
+}
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+.loading-text {
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  color: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  letter-spacing: 1.75px;
+  font-family: sans-serif;
+  opacity: 0;
+}
+.loading-circle {
+  width: 120px;
+  height: 120px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.loaderz {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.ldt-1 {
+  animation: ldt 0.5s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes ldt {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.ldt-2 {
+  animation: ldt 5s infinite 0.8s;
+}
+
+.ldt-3 {
+  animation: ldt 5s infinite 1.6s;
+}
+
+.ldt-4 {
+  animation: ldt 5s infinite 2.4s;
+}
+.ldt-5 {
+  animation: ldt 5s infinite 3.2s;
+}
+
+.resonance {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2);
+  }
+}
+
+.resonance2 {
+  animation: pulse2 2s infinite 0.1s;
+}
+
+@keyframes pulse2 {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2.2);
+  }
+}
+.ld-rect {
+  width: 4px;
+  height: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ld-rect-1 {
+  transform: translate(-50%, -50%);
+  animation: rect1 2s infinite;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation-direction: normal; /* or: normal */
+}
+
+@keyframes rect1 {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+  10% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+  90% {
+    transform: translate(-2000%, -2000%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-2000%, -2000%);
+  }
+}
+.ld-rect-2 {
+  transform: translate(-50%, -50%);
+  animation: rect2 2s infinite;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation-direction: normal; /* or: normal */
+}
+
+@keyframes rect2 {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+  10% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+  90% {
+    transform: translate(2000%, -2000%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(2000%, -2000%);
+  }
+}
+
+.ld-rect-3 {
+  transform: translate(-50%, -50%);
+  animation: rect3 2s infinite;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation-direction: normal; /* or: normal */
+}
+
+@keyframes rect3 {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+  10% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+  90% {
+    transform: translate(-2000%, 2000%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-2000%, 2000%);
+  }
+}
+
+.ld-rect-4 {
+  transform: translate(-50%, -50%);
+  animation: rect4 2s infinite;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation-direction: normal; /* or: normal */
+}
+
+@keyframes rect4 {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+  10% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+  90% {
+    transform: translate(2000%, 2000%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(2000%, 2000%);
+  }
+}
+.ld-rot {
+  transform: translate(-50%, -50%) rotate(65deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.ld-rot-3 {
+  transform: translate(-50%, -50%) rotate(115deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.ld-line {
+  width: 40px;
+  height: 0px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.ld-rect-5 {
+  transform: translate(-50%, -50%);
+  animation: rect5 2s infinite 0.4s;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation-direction: normal; /* or: normal */
+}
+
+@keyframes rect5 {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+  10% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+  55% {
+    width: 40px;
+  }
+  90% {
+    transform: translate(500%, 0%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(500%, 0%);
+    width: 30px;
+  }
+}
+
+.ld-rect-6 {
+  transform: translate(-50%, -50%);
+  animation: rect6 2s infinite 0.4s;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation-direction: normal; /* or: normal */
+}
+
+@keyframes rect6 {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+  10% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+  55% {
+    width: 40px;
+  }
+  90% {
+    transform: translate(-500%, 0%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-500%, 0%);
+    width: 30px;
+  }
+}
+
+.ld-rect-7 {
+  transform: translate(-50%, -50%);
+  animation: rect5 2s infinite 0.4s;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation-direction: normal; /* or: normal */
+}
+.ld-rect-8 {
+  transform: translate(-50%, -50%);
+  animation: rect6 2s infinite 0.4s;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation-direction: normal; /* or: normal */
+}
+.ld-rect-9 {
+  transform: translate(-50%, -50%);
+  animation: rect5 2s infinite 0.4s;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation-direction: normal; /* or: normal */
+}
+
+.ld-quarters {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 8s infinite;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation-direction: normal; /* or: normal */
+}
+
+@keyframes rotate {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(0deg) scale(0.8);
+  }
+  25% {
+    transform: translate(-50%, -50%) rotate(-90deg) scale(0.9);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(-180deg) scale(1);
+  }
+  75% {
+    opacity: 1;
+
+    transform: translate(-50%, -50%) rotate(-270deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+.ld-quarter-circle-1 {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-100%, -100%);
+  -moz-border-radius: 100% 0 0 0;
+  border-radius: 100% 0 0 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+
+  border-top: 0px solid rgba(255, 255, 255, 0.3);
+}
+
+.ld-quarter-circle-2 {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(0%, 0%);
+  -moz-border-radius: 0 0 100% 0;
+  border-radius: 0 0 100% 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+
+  border-bottom: 0px solid rgba(255, 255, 255, 0.3);
+}
+
+.ld-circ {
+  width: 4px;
+  height: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ld-circ-1 {
+  transform: translate(-50%, -50%);
+  animation: circ1 2s infinite 0.1s;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation-direction: normal; /* or: normal */
+}
+
+@keyframes circ1 {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+  10% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+  90% {
+    transform: translate(-50%, 3000%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 3000%);
+  }
+}
+
+.ld-circ-2 {
+  transform: translate(-50%, -50%);
+  animation: circ2 2s infinite 0.1s;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation-direction: normal; /* or: normal */
+}
+
+@keyframes circ2 {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+  10% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+  90% {
+    transform: translate(-50%, -3000%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -3000%);
+  }
+}
+
+/* After load */
+.button {
+  padding: 20px;
+  background: #333;
+  display: inline-block;
+  color: #fff;
+}
+
+.loading-end {
+  opacity: 0;
+  transition: all 1s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+}

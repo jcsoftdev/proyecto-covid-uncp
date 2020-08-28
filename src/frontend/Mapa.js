@@ -134,8 +134,8 @@ function renderMap(map, data) {
       new mapboxgl.Popup()
         .setLngLat(coordinates)
         .setHTML(
-          `<p>PROVINCIA: ${province} </br>
-                    CONTAGIADOS: <span style="color:red">${cantidad}</span><p/>`
+          `<p style="font-weight: 600;">PROVINCIA: ${province} </br>
+                    CONTAGIADOS: <span style="color:var(--bright-red)">${cantidad}</span><p/>`
         )
         .addTo(map);
     });

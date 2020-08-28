@@ -8,7 +8,7 @@ const Overview = ({DEPARTAMENTO, CANTIDAD}) => {
   // console.log(DEPARTAMENTO)
 
   return (
-    <div className="TopCard">
+    <div className="cards-overview">
       <div className="card-small">
         <p className="card-small-views">{DEPARTAMENTO}</p>
         <p className="card-small-icon">

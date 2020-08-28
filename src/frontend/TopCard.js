@@ -1,7 +1,7 @@
 import React from "react";
 import "./assets/styles/App.css";
 
-function TopCard() {
+function TopCard({cantidad, title}) {
   return (
     <div className="TopCard">
       <article className="card facebook">
@@ -10,8 +10,8 @@ function TopCard() {
           Casos confirmados
         </p>
         <p className="card-followers">
-          <span className="card-followers-number">478 K</span>
-          <span className="card-followers-title">Contagiados</span>
+          <span className="card-followers-number">{cantidad}</span>
+          <span className="card-followers-title">{title}</span>
         </p>
         <p className="card-today">
           {/* <img src="img/icon-up.svg" alt="today" /> */}

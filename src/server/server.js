@@ -68,6 +68,20 @@ app.get('/All/',(req, res)=>{
   getData()
 })
 
+app.get('/predictions/',(req, res)=>{
+
+  const getData = async () => {
+    try {
+      const data  = await api("predict")
+      console.log(data)
+      res.send(data)
+      console.log('error', error)
+    } catch (error) {
+    }
+  }
+  getData()
+})
+
 
 app.listen(PORT, (err) => {
   if (err) console.log(err)
