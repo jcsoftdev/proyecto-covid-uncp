@@ -19,7 +19,7 @@
     "server": "node ./src/server/index.js",
     "dev": "nodemon ./src/server/index.js",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --open --mode development"
+    "start": "node ./src/server/index.js"
   },
   "eslintConfig": {
     "extends": "react-app"
